@@ -1,6 +1,7 @@
 # Usando a imagem oficial da Evolution API
 # FROM atendai/evolution-api:v2.2.0
-  FROM atendai/evolution-api:v2.3.6
+# FROM atendai/evolution-api:v2.3.6 esto no esta publicada en atendai
+  FROM atendai/evolution-api:v2.2.3
 
 # Definindo as variáveis de ambiente
 ENV AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY} \
@@ -28,4 +29,5 @@ EXPOSE 8080
 
 # Comando para diagnóstico e execução
 CMD ["sh", "-c", "redis-cli -u $CACHE_REDIS_URI ping && npm run start:prod"]
+
 
